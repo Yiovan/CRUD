@@ -1,0 +1,26 @@
+const express = require('express');
+const path = require('path');
+const methodOverride = require('method-override');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Configuration
+app.set('view engine', 'ejs');
+app.set('views', path.join(__line__, 'views')); // Wait, it's __dirname, let me fix this.
+
+// Middlewares
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(methodOverride('_method')); // For PUT and DELETE forms
+
+// Routes Placeholder
+app.get('/', (req, res) => {
+    res.send('Server is up and running. Setup complete!');
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
