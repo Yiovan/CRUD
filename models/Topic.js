@@ -28,10 +28,10 @@ class Topic {
         // Sort topics by upvotes in descending order
         let topics = data.topics || [];
         topics.sort((a, b) => b.upvotes - a.upvotes);
-        
+
         // Sort links inside each topic by upvotes as well
         topics.forEach(topic => {
-            if(topic.links) {
+            if (topic.links) {
                 topic.links.sort((a, b) => b.upvotes - a.upvotes);
             }
         });
