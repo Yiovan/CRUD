@@ -1,0 +1,31 @@
+<%- include('./partials/header') %>
+
+<section class="topic-detail animate-fade-in">
+    <div class="detail-header" style="background: var(--surface-color); padding: 2rem; border-radius: 0.75rem; border: 1px solid var(--border-color); margin-bottom: 2rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+            <div class="title-group" style="flex: 1;">
+                <h1 style="color: var(--primary-hover); margin-bottom: 0.5rem;"><%= topic.title %></h1>
+                <p class="detail-desc" style="color: var(--text-color); font-size: 1.1rem;"><%= topic.description %></p>
+            </div>
+            <div class="action-group" style="display: flex; gap: 0.5rem; flex-shrink: 0;">
+                <a href="/topic/<%= topic.id %>/edit" class="btn-outline"><i class="fa-solid fa-pen"></i> Editar</a>
+                <form action="/topic/<%= topic.id %>?_method=DELETE" method="POST" style="display: inline;" onsubmit="return confirm('¿Seguro de que deseas eliminar este tema permanentemente?');">
+                    <button type="submit" class="btn-danger"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="links-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <h3>Enlaces de Aprendizaje</h3>
+            <span class="text-muted">0 Enlaces (Implementando CRUD en Paso 6)</span>
+        </div>
+        
+        <div class="empty-state" style="padding: 2rem;">
+            <p>El sistema de enlaces se implementará pronto...</p>
+        </div>
+    </div>
+</section>
+
+<%- include('./partials/footer') %>

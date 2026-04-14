@@ -1,0 +1,25 @@
+<%- include('./partials/header') %>
+
+<section class="form-section animate-fade-in">
+    <div class="form-container">
+        <h2>Editar Tema</h2>
+        <p class="text-muted" style="margin-bottom: 2rem;">Modifica los detalles de este tema educativo.</p>
+        
+        <form action="/topic/<%= topic.id %>?_method=PUT" method="POST" class="custom-form">
+            <div class="form-group">
+                <label for="title">Título del Tema</label>
+                <input type="text" id="title" name="title" value="<%= topic.title %>" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <textarea id="description" name="description" rows="5" required><%= topic.description %></textarea>
+            </div>
+            <div class="form-actions">
+                <a href="/topic/<%= topic.id %>" class="btn-outline">Cancelar</a>
+                <button type="submit" class="btn-primary">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<%- include('./partials/footer') %>
