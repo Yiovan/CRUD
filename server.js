@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 // Configuration
 app.set('view engine', 'ejs');
-app.set('views', path.join(__line__, 'views')); // Wait, it's __dirname, let me fix this.
+app.set('views', path.join(__dirname, 'views'));
 
 // Middlewares
 app.use(express.static(path.join(__dirname, 'public')));
