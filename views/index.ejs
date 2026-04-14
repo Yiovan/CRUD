@@ -1,0 +1,36 @@
+<%- include('./partials/header') %>
+
+<section class="hero animate-fade-in">
+    <h1>Explora los Mejores Temas</h1>
+    <p>La comunidad comparte recursos valiosos, y tú decides qué es lo más importante.</p>
+</section>
+
+<section class="topics-grid">
+    <% if (topics && topics.length > 0) { %>
+        <% topics.forEach(topic => { %>
+            <article class="topic-card animate-slide-up">
+                <div class="topic-header">
+                    <h2><%= topic.title %></h2>
+                    <div class="vote-container">
+                        <button class="btn-vote" data-type="topic" data-id="<%= topic.id %>">
+                            <i class="fa-solid fa-caret-up"></i>
+                        </button>
+                        <span class="vote-count" id="score-topic-<%= topic.id %>"><%= topic.upvotes %></span>
+                    </div>
+                </div>
+                <p class="topic-desc"><%= topic.description %></p>
+                <div class="topic-meta">
+                    <span class="links-count"><i class="fa-solid fa-link"></i> <%= topic.links ? topic.links.length : 0 %> enlaces</span>
+                    <a href="/topic/<%= topic.id %>" class="btn-outline">Ver más</a>
+                </div>
+            </article>
+        <% }) %>
+    <% } else { %>
+        <div class="empty-state">
+            <h2>No hay temas todavía</h2>
+            <p>¡Sé el primero en compartir algo interesante!</p>
+        </div>
+    <% } %>
+</section>
+
+<%- include('./partials/footer') %>

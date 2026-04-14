@@ -15,10 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method')); // For PUT and DELETE forms
 
-// Routes Placeholder
-app.get('/', (req, res) => {
-    res.send('Server is up and running. Setup complete!');
-});
+// Routes
+const topicRoutes = require('./routes/topicRoutes');
+app.use('/', topicRoutes);
 
 // Start the server
 app.listen(PORT, () => {
