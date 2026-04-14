@@ -1,0 +1,20 @@
+{
+  "topics": [
+    {
+      "id": "e7b0c34a-9b12-4c2d-9614-25e4f2b96d9f",
+      "title": "Welcome to Learn It, Love It",
+      "description": "This is a sample topic to get you started. Add your own!",
+      "upvotes": 5,
+      "links": [
+        {
+          "id": "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+          "title": "Node.js Official Documentation",
+          "url": "https://nodejs.org/en/docs/",
+          "upvotes": 3,
+          "createdAt": "2026-04-14T12:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-04-14T12:00:00.000Z"
+    }
+  ]
+}
